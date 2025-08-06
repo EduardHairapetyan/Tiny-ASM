@@ -27,6 +27,11 @@ const char* regName(unsigned char code) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc != 2)
+    {
+        printf("Usage: %s <input-binary-file>\n", argv[0]);
+        return -1;
+    }
     const char* inputFile = "out.bin";
     const char* outputFile = "disassembled.asm";
 
