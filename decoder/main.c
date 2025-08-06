@@ -1,30 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef union {
-    struct {
-        unsigned char b0 : 1;
-        unsigned char b1 : 1;
-        unsigned char b2 : 1;
-        unsigned char b3 : 1;
-        unsigned char b4 : 1;
-        unsigned char b5 : 1;
-        unsigned char b6 : 1;
-        unsigned char b7 : 1;
-    };
-    unsigned char value;
-} Instruction;
-
-const char* regName(unsigned char code) {
-    switch (code) {
-    case 0: return "a";
-    case 1: return "b";
-    case 2: return "c";
-    case 3: return "d";
-    default: return "?";
-    }
-}
+#include "decoder.h"
 
 int main(int argc, char* argv[]) {
     if (argc != 3)
