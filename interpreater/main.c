@@ -1,41 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include "interpreater.h"
 
-typedef union {
-    struct {
-        unsigned char b0 : 1;
-        unsigned char b1 : 1;
-        unsigned char b2 : 1;
-        unsigned char b3 : 1;
-        unsigned char b4 : 1;
-        unsigned char b5 : 1;
-        unsigned char b6 : 1;
-        unsigned char b7 : 1;
-    };
-    unsigned char value;
-} Instruction;
-
-// Explicit registers
-unsigned char a = 0;
-unsigned char b = 0;
-unsigned char c = 0;
-unsigned char d = 0;
-
-// Get pointer to register by code (00=a, 01=b, 10=c, 11=d)
-unsigned char* getRegister(unsigned char code) {
-    switch (code) {
-    case 0: return &a;
-    case 1: return &b;
-    case 2: return &c;
-    case 3: return &d;
-    default: return NULL;
-    }
-}
-
-void printRegisters() {
-    printf("Registers: a=%u b=%u c=%u d=%u\n", a, b, c, d);
-}
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
@@ -79,7 +46,7 @@ int main(int argc, char* argv[]) {
         if (instr.b7 == 0) {
             // MOVI: immediate value 0..127
             unsigned char imm = instr.value & 0x7F;
-            a = imm; // MOVI always loads to register a by convention
+			setRegister(0, imm); // Store in register 'a'
             printf("MOVI # %u -> a\n", imm);
         }
         else {
