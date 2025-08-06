@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "compiler", "Tiny-ASM\Tiny-A
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interpreater", "interpreater\interpreater.vcxproj", "{A860C5C6-CF80-450E-8BD0-E6BB8931BA2B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "decoder", "decoder\decoder.vcxproj", "{2F96D9BB-8262-44C3-88E9-69205017844E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{A860C5C6-CF80-450E-8BD0-E6BB8931BA2B}.Release|x64.Build.0 = Release|x64
 		{A860C5C6-CF80-450E-8BD0-E6BB8931BA2B}.Release|x86.ActiveCfg = Release|Win32
 		{A860C5C6-CF80-450E-8BD0-E6BB8931BA2B}.Release|x86.Build.0 = Release|Win32
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Debug|x64.ActiveCfg = Debug|x64
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Debug|x64.Build.0 = Debug|x64
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Debug|x86.ActiveCfg = Debug|Win32
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Debug|x86.Build.0 = Debug|Win32
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Release|x64.ActiveCfg = Release|x64
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Release|x64.Build.0 = Release|x64
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Release|x86.ActiveCfg = Release|Win32
+		{2F96D9BB-8262-44C3-88E9-69205017844E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
