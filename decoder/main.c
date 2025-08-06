@@ -27,13 +27,13 @@ const char* regName(unsigned char code) {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 2)
+    if (argc != 3)
     {
-        printf("Usage: %s <input-binary-file>\n", argv[0]);
+        printf("Usage: %s <input-binary-file> <output-asm-file>\n", argv[0]);
         return -1;
     }
-    const char* inputFile = "out.bin";
-    const char* outputFile = "disassembled.asm";
+    const char* inputFile = argv[1];
+    const char* outputFile = argv[2];
 
     FILE* in = fopen(inputFile, "rb");
     if (!in) {
