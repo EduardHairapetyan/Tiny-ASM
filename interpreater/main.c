@@ -152,7 +152,14 @@ int main(int argc, char* argv[]) {
 
                     // Convert to integer
                     int val = atoi(input);
-                    if (val < 0 || val > 127) val = 0;
+                    if (val < 0 || val > 127)
+                    {
+						printf("Invalid input value. Must be between 0 and 127.\n");
+						free(program);
+						return 1;
+                        val = 0;
+                    }
+
 
                     *reg = (unsigned char)val;
                     printf("Read %u into %c\n", *reg, 'a' + regCode);
