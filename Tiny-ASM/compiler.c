@@ -191,6 +191,11 @@ int compileFile(const char* inputFilename, ProgramBuffer* buf) {
         char* token = strtok(line, "\n");
         if (!token) continue;
 
+        char* commentStart = strchr(line, ';');
+        if (commentStart) {
+            *commentStart = '\0'; // terminate string at comment start
+        }
+
         // Skip empty or comment lines (optional: add comment support)
         while (*token == ' ' || *token == '\t') token++;
         if (*token == '\0') continue;
